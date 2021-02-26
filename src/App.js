@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Switch,Route,Link, BrowserRouter} from "react-router-dom";
+import Mainhome from './components/Mainhome'
+import Welcome from './components/Welcome';
+import Timer from './components/Timer';
+import Todos from './components/Todos';
+import Events from './components/Events';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' component={Mainhome} exact={true} />
+        <Route path='/welcome' component={Welcome} />
+        <Route path='/timer' component={Timer} />
+        <Route path='/todos' component={Todos} />
+        <Route path='/events' component={Events} />
+      </Switch>
+    </BrowserRouter>
+     
   );
 }
 
